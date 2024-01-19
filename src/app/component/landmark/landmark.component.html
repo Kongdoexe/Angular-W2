@@ -1,0 +1,60 @@
+<body style="margin-top: 48px;">
+  <div class="container-navbar " style="display: flex; justify-content: space-between;">
+    <div >
+      <span>หมายเลขสถานที่</span>
+      <input type="number" #id style="width: 50px; margin-left: 5px;" /><button
+        mat-raised-button
+        color="primary"
+        (click)="Number(id)"
+        style="margin-left: 20px;"
+      >
+        ค้นหา
+      </button>
+    </div>
+    <div>
+      <span>ค้นหาจากชื่อสถานที่</span>
+      <input type="text" #name style="width: 120px; margin-left: 5px;" /><button
+        mat-raised-button
+        color="primary"
+        (click)="namePush(name)"
+        style="margin-left: 20px;"
+      >
+        ค้นหา
+      </button>
+    </div>
+    <div>
+      <span>เลือกประเทศ</span>
+      <select
+        name="con"
+        id="con"
+        #nameCountry
+        style="width: 120px; margin-left: 5px;"
+        (change)="CountrySelect(nameCountry)"
+      >
+        <option value="" disabled selected hidden></option>
+        <option *ngFor="let lm of uni" [value]="lm">{{ lm }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div style="margin-top: -40px" class="container">
+    <div *ngFor="let lm of landmark">
+      <div class="row" style="display: flex; width: 100%; margin-top: 20px; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+          <img
+          src="{{ lm.url }}"
+          alt="image"
+          width="400px"
+          [routerLink]="['show', lm.idx]"
+        />
+        <div
+          class="col"
+          style="background-color: rgb(253, 247, 238); padding-left: 2%;"
+        >
+          <h2 style="margin-top: 5px">{{ lm.name }}</h2>
+          <h4 style="margin-top: -10px">{{ lm.country }}</h4>
+          <p style="margin-top: -20px">{{ lm.detail }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

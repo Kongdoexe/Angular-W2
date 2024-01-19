@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500&display=swap");
+
+* {
+  font-family: "Noto Serif Thai", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-navbar {
+ width: 55%;
+ margin: 0 auto;
+ padding: 10px;
+}
+
+.container > div , .container-navbar > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+img {
+  transition: transform .5s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+button{
+  width: 70px;
+  height: 30px;
+}
+
+span{
+  margin-top: 5px;
+}
+
+option{
+  font-size: 15px;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+  <img src="{{ landmark.url }}" />
+  <div style="display: flex; flex-direction: column;background-color: rgb(253, 247, 238); margin-top: -10px;">
+    <div style="margin-left: 10px;">
+      <h2 >{{ landmark.name }}</h2>
+      <h3 style="margin-top: -15px;">{{ landmark.country }}</h3>
+      <p style="margin-top: -15px;">{{ landmark.detail }}</p>
+      <button mat-raised-button color="primary" class="back-button" routerLink="">กลับ</button>
+    </div>
+  </div>
+</div>
