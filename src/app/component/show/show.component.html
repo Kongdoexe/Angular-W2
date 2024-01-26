@@ -5,7 +5,7 @@
       <h2 >{{ landmark.name }}</h2>
       <h3 style="margin-top: -15px;">{{ landmark.country }}</h3>
       <p style="margin-top: -15px;">{{ landmark.detail }}</p>
-      <button mat-raised-button color="primary" class="back-button" routerLink="">กลับ</button>
+      <button mat-raised-button color="primary" class="back-button" (click)="back()">กลับ</button>
     </div>
   </div>
 </div>

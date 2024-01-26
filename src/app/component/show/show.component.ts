@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  RouterLink,
+  RouterModule,
+} from '@angular/router';
 import jsonData from '../../../assets/landmark.json';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -16,10 +21,21 @@ export class ShowComponent implements OnInit {
   jsonData = jsonData;
   landmark: any = {};
 
-  constructor(private activeatedRoute: ActivatedRoute) {}
+  constructor(
+    private activeatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.id = this.activeatedRoute.snapshot.paramMap.get('id') || '';
-    this.landmark = this.jsonData.find((landmark) => landmark.idx == this.id);
+    if (sessionStorage.getItem('idShow')) {
+      this.id = sessionStorage.getItem('idShow');
+      this.landmark = this.jsonData.find((landmark) => landmark.idx == this.id);
+    } else {
+      this.router.navigate(['']);
+    }
+  }
+
+  back(){
+    window.history.back()
   }
 }

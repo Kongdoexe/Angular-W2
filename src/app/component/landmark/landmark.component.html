@@ -44,10 +44,10 @@
           src="{{ lm.url }}"
           alt="image"
           width="400px"
-          [routerLink]="['show', lm.idx]"
+          (click)="PageShow(lm.idx)"
         />
         <div
-          class="col"
+          class="col "
           style="background-color: rgb(253, 247, 238); padding-left: 2%;"
         >
           <h2 style="margin-top: 5px">{{ lm.name }}</h2>

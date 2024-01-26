@@ -4,6 +4,5 @@ import { ShowComponent } from './component/show/show.component';
 
 export const routes: Routes = [
   {path: '',component: LandmarkComponent},
-  {path: 'show',component: ShowComponent},
-  {path: 'show/:id',component: ShowComponent}
+  {path: 'show',component: ShowComponent}
 ];
