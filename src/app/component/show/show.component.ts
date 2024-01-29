@@ -37,5 +37,6 @@ export class ShowComponent implements OnInit {
 
   back(){
     window.history.back()
+    sessionStorage.setItem('idSearch', this.id)
   }
 }

@@ -35,7 +35,9 @@ export class LandmarkComponent {
       }
 
     } else {
+
       this.landmark = [this.landmarks[0]];
+
     }
 
   }
@@ -50,12 +52,18 @@ export class LandmarkComponent {
   Number(id: HTMLInputElement) {
     this.landmark = this.landmarks.filter(lm => lm.idx.toString() === id.value);
 
+    if(this.landmark.length > 0){
+      sessionStorage.setItem('idSearch', id.value)
+    }
+
     if (this.landmark.length === 0 && this.landmarks.length > 0) {
-      if (sessionStorage.getItem('idShow')) {
-        this.landmark = this.landmarks.filter((landmark) => landmark.idx ==+ sessionStorage.getItem('idShow')!);
+
+      if(sessionStorage.getItem('idSearch')){
+        this.landmark = this.landmarks.filter((landmark) => landmark.idx ==+ sessionStorage.getItem('idSearch')!);
       } else {
-        this.landmark = [this.landmarks[0]];
+        this.landmark = [this.landmarks[0]]
       }
+
     }
 
     this.service.SearchType = 'Number';
